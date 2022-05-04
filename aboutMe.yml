@@ -1,9 +1,9 @@
 name: Livern Lim
-studentNumber: z007666
+studentNumber: BVN
 officialEmail: li_vern@yahoo.com
 contactEmail: # don't write on this line
   firstBit: li_vern # this avoids spam, the @ is implied
   otherBit: yahoo.com
 # accounts
-stackOverflowLink: https://stackoverflow.com/users/1835727/ben
+stackOverflowLink: https://stackoverflow.com/users/1835727/dummy
 github: lvl-lim

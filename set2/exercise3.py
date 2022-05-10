@@ -2,6 +2,10 @@
 """Modify each function until the tests pass."""
 
 
+from csv import field_size_limit
+from dataclasses import field
+
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
@@ -44,6 +48,7 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
+    
     my_list = []
     for i in range (10):
         my_list.append("*")
@@ -59,8 +64,8 @@ def loops_1c(number_of_items=5, symbol="#"):
     E.g.: ['#', '#', '#', '#', '#']
     """
     my_list = []
-    for i in range (5):
-        my_list.append("#")
+    for i in range (number_of_items):
+        my_list.append(symbol)
     return my_list
 
 
@@ -82,13 +87,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    my_list = []
-    for i in range(10):
-        inside_list = []
-        for j in range(10):
-            inside_list.append("*")
-    my_list.append(inside_list)
-    return my_list
+    
+    star_field = []
+    for j in range(10):
+        star_line = []
+        for i in range(10):
+            star_line.append("*")
+        star_field.append(star_line)
+    return star_field 
 
 
 
@@ -113,7 +119,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    
+    field_list = []
+    for j in range(10):
+        my_list = []
+        for i in range(10):
+            my_list.append(str(j))
+        field_list.append(my_list)
+    print(field_list)
+    return field_list
 
 
 def loops_4():
@@ -133,7 +147,16 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    
+    field_list = []
+    for j in range(10):
+        my_list = []
+        for i in range(10):
+            my_list.append(str(i))
+        field_list.append(my_list)
+    print (field_list)
+    return field_list
+
 
 
 def loops_5():
@@ -160,7 +183,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    coordinate_list = []
+    for i in range(10):
+        coordinate_line = []
+        for j in range(5):
+            coordinate_line.append("(i" + str(i) + ", j" +  str(j) + ")")
+        coordinate_list.append(coordinate_line)
+    print (coordinate_list)
+    return coordinate_list
+
 
 
 def loops_6():
@@ -183,7 +214,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    the_wedge = []
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(str(j))
+        the_wedge.append(row)
+    print (the_wedge)
+    return the_wedge
 
 
 def loops_7():
@@ -207,7 +245,14 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    christmas_tree = []
+    for i in range(5):
+        row = []
+        for j in range(i + 1):
+            row.append("*")
+        christmas_tree.append(row)
+    print (christmas_tree)
+    return christmas_tree
 
 
 def little_printer(some_kind_of_list, exercise_name):

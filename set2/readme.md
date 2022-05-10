@@ -36,4 +36,14 @@ Other solutions to Exercise 3 Engineering Problem
             return "No Problem"
 
 
-m
+loops 1a alternative solution
+["*"] * 10
+
+
+loops 1b alternative solution
+append ["*"] * 10 to list
+
+loops 2 alternative solution
+star_square = []
+for j in range(10):
+    star_square.append(loops_1c(number_of_items=10, symbol="*"))

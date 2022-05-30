@@ -93,3 +93,32 @@ print(price > 10) returns TRUE
 
 print(price > 10 and prince <30) both statements must be true
 print(price > 10 or prince <30) only one statements needs to be true to return true
+
+--IF STATEMENTS--
+
+temperature = 25
+
+if temperature > 30:
+print("It's a hot day!")
+print("Drink plenty of water")
+elif temperature > 20: # (20 , 30)
+print("Perfect Weather! Picnic Time!")
+elif temperature > 10: # (10 , 20)
+print("It's a bit cold today... Wrap up!")
+else:
+print("I'm freezing my butt off!")
+print("Done")
+
+--EXERCISE--
+Create a weight convertor program that converts lbs to kg
+
+Weight = input("What is your weight? ")
+Unit = input("(K)g or (L)bs): ")
+Weight_in_lbs = int(int(Weight) \* 2.205)
+Weight_in_kg = int(int(Weight) / 2.205)
+if Unit == "K" or "k":
+print("Converted Weight: " + str(Weight_in_lbs) + " lbs")
+elif Unit == "L" or "l":
+print("Converted Weight: " + str(Weight_in_kg) + " kg")
+else:
+print("You've broken the fabric of reality!")

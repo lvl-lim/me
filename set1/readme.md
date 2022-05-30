@@ -112,13 +112,14 @@ print("Done")
 --EXERCISE--
 Create a weight convertor program that converts lbs to kg
 
-Weight = input("What is your weight? ")
+Weight = int(input("What is your weight? "))
 Unit = input("(K)g or (L)bs): ")
-Weight_in_lbs = int(int(Weight) \* 2.205)
-Weight_in_kg = int(int(Weight) / 2.205)
-if Unit == "K" or "k":
+Weight_in_lbs = int((Weight) \* 2.205)
+Weight_in_kg = int((Weight) / 2.205)
+
+if Unit == "K" or Unit == "k":
 print("Converted Weight: " + str(Weight_in_lbs) + " lbs")
-elif Unit == "L" or "l":
+elif Unit == "L" or Unit == "l":
 print("Converted Weight: " + str(Weight_in_kg) + " kg")
 else:
-print("You've broken the fabric of reality!")
+print("Not a valid input. Try again please.")

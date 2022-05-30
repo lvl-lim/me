@@ -32,10 +32,15 @@ def be_cool_for_ever(name, file_path):
     history_book.write(name + " is cool")
     history_book.close()
 
+def safely_write(name, file_path)
+    with open(file_path, "w", encoding="utf-8") as history_book: 
+        history_book.write(f"{name} is cool")
+
 
 # look up what '..' means
 be_cool_for_ever("Ben", "../ben_is_cool.txt")
 be_cool_for_ever("Ben", "ben_is_cool.lol_UR_joking")
+safely_write("emoji","ducks.yes" )
 
 # See where each file was saved
 

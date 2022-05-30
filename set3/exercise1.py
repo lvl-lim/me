@@ -5,11 +5,14 @@ Modify each function until the tests pass.
 """
 
 
+from re import T
+
+
 def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from JUST using range() #TODO: clarify this wording
-    The look up the docs for range(), you can answer this with just the range 
+    The look up the docs for range(), you can answer this with just the range
     function, but we'd like you to do it the long way, probably using a loop.
     """
     return None
@@ -40,13 +43,25 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+
+    while True:
+        try:
+            the_input = input(f"give me a number between {low} and {high}: ")
+            answer = int(the_input)
+
+            if low < answer < high:
+                print("❤😍👌👌💖👏👏👏")
+                return answer
+            else:
+                print("that number is outside the bounds")
+        except:
+            print("that's not a number, dodo!")
 
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
 
-    Ask for a number, and if the response is actually NOT a number 
+    Ask for a number, and if the response is actually NOT a number
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """

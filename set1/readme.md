@@ -1,7 +1,7 @@
 TODO: Reflect on what you learned this week and what is still unclear.
 hello
 
-Self Exercises on Youtube
+Self Study
 
 --VARIABLES, INPUT & TYPE CONVERSION--
 
@@ -196,3 +196,5 @@ will return 5, 7 and 9 (step)
 
 -- TUPLES --
 #immutable, cannot be replaced or changed like lists
+count
+index

@@ -123,3 +123,76 @@ elif Unit == "L" or Unit == "l":
 print("Converted Weight: " + str(Weight_in_kg) + " kg")
 else:
 print("Not a valid input. Try again please.")
+
+--WHILE LOOPS--
+
+i = 1
+while i <= 10:
+print(i)  
+i = i + 1
+
+LISTS
+names = ["Ben", "Michael", "Liv", "Kyle", "Ryann"]
+print(names[2])
+
+#negative index
+-1 represents last element in the list
+-2 represents second last element in the list
+
+#to replace items in the list
+names[2] = "Livern"
+print(names)
+
+#to print the first 3 names only
+print(names[0:3])
+#python will print from start index to end index but excluding the end index
+
+-- LIST METHODS --
+
+APPEND
+numbers = [1 , 2 , 3 , 4 , 5]
+numbers.append(6)
+print(numbers)
+
+INSERT in beginning of list
+numbers.insert(0, -1)
+
+REMOVE
+numbers.remove(3)
+
+CLEAR - empty the list
+numbers.clear()
+
+check if something is in the list
+numbers = [1 , 2 , 3 , 4 , 5]
+print(1 in numbers)
+#returns True or False
+
+check how many items are in the list, number of elements in the list
+print(len(numbers))
+
+-- FOR LOOPS --
+
+numbers = [1, 2, 3, 4, 5]
+for item in numbers:
+print(item)
+
+-- RANGE FUNCTION --
+#store a sequence of numbers
+range(5)
+for number in numbers:
+print(number)
+#will print numbers up to the number specified
+
+if range has 2 values (ie: (5,9))
+first number is starting value,
+ending value (will be excluded)
+
+if range has 3 values,
+third value indicates step
+ie:
+range (5 , 10, 2)
+will return 5, 7 and 9 (step)
+
+-- TUPLES --
+#immutable, cannot be replaced or changed like lists

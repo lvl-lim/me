@@ -16,9 +16,11 @@ def loop_ranger(start, stop=None, step=1):
     function, but we'd like you to do it the long way, probably using a loop.
     """
 
+    bucket = []
     while start < stop:
-        print(start + 1)
-        start = start + step
+        bucket.append(start)
+        start += step
+    return bucket
 
 
 def lone_ranger(start, stop, step):
@@ -26,8 +28,7 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    for i in range(start, stop, step):
-        return i
+    return list(range(start, stop, step))
 
 
 def two_step_ranger(start, stop):
@@ -37,9 +38,7 @@ def two_step_ranger(start, stop):
     Make a range function that always has a step size of 2
     """
 
-    while start < stop:
-        print(start)
-        start = start + 2
+    return list(range(start, stop, 2))
 
 
 def stubborn_asker(low, high):

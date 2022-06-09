@@ -27,7 +27,7 @@ def advancedGuessingGame():
     """
 
     print("\nWelcome to the guessing game!")
-    lowerBound = input("Enter a lower bound: ")
+    lowerBound = int(input("Enter a lower bound: "))
     upperBound = int(input("Enter an upper bound: "))
     print(f"Alrighty then, a number between {lowerBound} and {upperBound} ?")
 

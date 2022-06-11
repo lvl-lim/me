@@ -34,13 +34,14 @@ def binary_search(low, high, actual_number):
             tries += 1
             return {"guess": mid, "tries": tries}
         if actual_number == high:
+            tries += 1
             return {"guess": high, "tries": tries}
         if actual_number == low:
+            tries += 1
             return {"guess": low, "tries": tries}
         if actual_number == mid:
+            tries += 1
             return {"guess": mid, "tries": tries}
-        if low + 1 == high:
-            return {"guess": high, "tries": tries}
         elif actual_number > mid:
             low = mid + 1
             tries += 1

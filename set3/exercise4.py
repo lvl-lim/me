@@ -2,6 +2,7 @@
 """Set 3, Exercise 4."""
 
 
+from decimal import ROUND_UP
 import math
 
 # import time
@@ -27,9 +28,29 @@ def binary_search(low, high, actual_number):
     tries = 0
     guess = 0
 
-    # Write your code in here
-
-    return {"guess": guess, "tries": tries}
+    while high >= low:
+        mid = round((high + low) / 2)
+        if actual_number == mid:
+            tries += 1
+            return {"guess": mid, "tries": tries}
+        if actual_number == high:
+            return {"guess": high, "tries": tries}
+        if actual_number == low:
+            return {"guess": low, "tries": tries}
+        if actual_number == mid:
+            return {"guess": mid, "tries": tries}
+        if low + 1 == high:
+            return {"guess": high, "tries": tries}
+        elif actual_number > mid:
+            low = mid + 1
+            tries += 1
+            print({"guess": mid, "tries": tries})
+        elif actual_number < mid:
+            high = mid - 1
+            tries += 1
+            print({"guess": mid, "tries": tries})
+        else:
+            print("what's going on")
 
 
 if __name__ == "__main__":

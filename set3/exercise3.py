@@ -28,19 +28,19 @@ def advancedGuessingGame():
 
     print("\nWelcome to the guessing game!")
     while True:
-        lowerBound = input("Enter a lower bound: ")
-
-        if lowerBound.isdigit():
+        try:
+            lowerBound = input("Enter a lower bound: ")
+            lowerBoundcheck = int(lowerBound)
             break
-        else:
+        except:
             print("Not a valid answer. Please try again.")
 
     while True:
-        upperBound = input("Enter a upper bound: ")
-
-        if upperBound.isdigit():
+        try:
+            upperBound = input("Enter a upper bound: ")
+            upperBoundcheck = int(upperBound)
             break
-        else:
+        except:
             print("Not a valid answer. Please try again.")
 
     print(f"Alrighty then, a number between {lowerBound} and {upperBound} ?")

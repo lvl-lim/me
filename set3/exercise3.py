@@ -51,6 +51,7 @@ def advancedGuessingGame():
     actualNumber = random.randint(lowerBound, upperBound)
 
     guessed = False
+    counter = 0
 
     while not guessed:
         try:
@@ -61,6 +62,9 @@ def advancedGuessingGame():
                 guessed = True
             if guessedNumber > upperBound or guessedNumber < lowerBound:
                 print("... Time to go back to pre-school!")
+                counter += 1
+                if counter > 2:
+                    print("Do you even math?")
             elif guessedNumber < actualNumber:
                 print("Too small, try again :'(")
             elif guessedNumber > actualNumber:

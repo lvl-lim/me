@@ -11,10 +11,14 @@ import sys
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
 if LOCAL != CWD:
-    print("Be careful that your relative paths are")
-    print("relative to where you think they are")
-    print("LOCAL", LOCAL)
-    print("CWD", CWD)
+    print(
+        f"""
+    Be careful that your relative paths are
+    relative to where you think they are
+    LOCAL: {LOCAL}
+    CWD: "CWD
+    """
+    )
 
 
 def get_some_details():
@@ -74,10 +78,10 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
 
-    for i in range(3,10,1)
-    r = requests.get(
-        f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={10}"
-    )
+    for i in range(3,10,1):
+        r = requests.get(
+            f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={10}"
+        )
 
 
 def pokedex(low=1, high=5):
@@ -94,13 +98,13 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    
-    for i in range (low, high, 1):
-        url = "https://pokeapi.co/api/v2/pokemon/{id}"
+    template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
+    url = template.format(id=5)
     r = requests.get(url)
     if r.status_code is 200:
         the_json = json.loads(r.text)
+
     return {"name": None, "weight": None, "height": None}
 
 
@@ -110,6 +114,7 @@ def diarist():
     Read in Trispokedovetiles(laser).gcode and count the number of times the
     laser is turned on and off. That's the command "M10 P1".
     Write the answer (a number) to a file called 'lasers.pew' in the Set4 directory.
+
     TIP: you need to write a string, so you'll need to cast your number
     TIP: Trispokedovetiles(laser).gcode uses windows style line endings. CRLF
          not just LF like unix does now. If your comparison is failing this
@@ -117,20 +122,29 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
+
+    NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
     pass
 
 
 if __name__ == "__main__":
-    functions = [
-        obj
-        for name, obj in inspect.getmembers(sys.modules[__name__])
-        if (inspect.isfunction(obj))
-    ]
-    for function in functions:
-        try:
-            print(function())
-        except Exception as e:
-            print(e)
-    if not os.path.isfile("lasers.pew"):
+    print(get_some_details())
+
+    wp = wordy_pyramid()
+    [print(f"{word} {len(word)}") for word in wp]
+
+    print(pokedex(low=3, high=7))
+
+    diarist()
+
+    in_root = os.path.isfile("lasers.pew")
+    in_set4 = os.path.isfile("set4/lasers.pew")
+    if not in_set4 and not in_root:
         print("diarist did not create lasers.pew")
+    elif not in_set4 and in_root:
+        print(
+            "diarist did create lasers.pew, but in the me folder, it should be in the set4 folder"
+        )
+    elif in_set4:
+        print("lasers.pew is in the right place")

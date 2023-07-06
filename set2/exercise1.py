@@ -1,10 +1,16 @@
 """
 Commenting skills:
 
+NOTE: this file runs just fine, this is for you to learn to use the debugger!
+
 TODO: above every line of code comment what you THINK the line below does.
 TODO: execute that line and write what actually happened next to it.
 
-See example for first print statement
+See example for first print statement.
+
+TODO: Start a list of important programming vocabulary in your readme.md for 
+this week. E.g. the word "calling" means something in a programming context, 
+what does it mean?
 """
 import platform
 
@@ -39,5 +45,6 @@ def usefulFunction():
     https://docs.python.org/3/library/platform.html#platform.uname
     """
     print(platform.uname())
+
 
 usefulFunction()

@@ -19,7 +19,7 @@ import json
 
 def be_cool(name):
     """Just print, not actually doing any IO."""
-    print(name + " is cool")
+    print(f"{name} is cool")
 
 
 be_cool("Ben")
@@ -29,7 +29,7 @@ def be_cool_for_ever(name, file_path):
     """Save a message about being cool for ever."""
     mode = "w"  # from the docs
     history_book = open(file_path, mode)
-    history_book.write(name + " is cool")
+    history_book.write(f"{name} is cool")
     history_book.close()
 
 def safely_write(name, file_path)
@@ -41,6 +41,14 @@ def safely_write(name, file_path)
 be_cool_for_ever("Ben", "../ben_is_cool.txt")
 be_cool_for_ever("Ben", "ben_is_cool.lol_UR_joking")
 safely_write("emoji","ducks.yes" )
+
+
+def safely_write(name, file_path):
+    with open(file_path, "w", encoding="utf-8") as history_book:
+        history_book.write(f"{name} is cool 💩💩")
+
+
+safely_write("🕺👆☝🦆", "ducks.yes")
 
 # See where each file was saved
 
@@ -103,15 +111,14 @@ def dig_up_capsule(file_path):
     Args:
         file_path (str): The path to where you want to save the json.
     """
+    mode = "r"  # from the docs
+    template = """{Greeting},\nDid you know that in {Year}, "{Fact}" was still true!"""
+    keys_needed = ["Greeting", "Year", "Fact"]
     try:
-        mode = "r"  # from the docs
         time_capsule = open(file_path, mode)
         contents = json.load(time_capsule)
         time_capsule.close()
-        keys_needed = ["Greeting", "Year", "Fact"]
-        if all(key in contents for key in keys_needed):
-            template = """{Greeting},\nDid you know that in {Year}, "{Fact}" was still true!
-                       """
+        if all([key in contents for key in keys_needed]):
             print(template.format(**contents))
             return True
         else:

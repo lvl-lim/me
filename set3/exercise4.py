@@ -1,11 +1,6 @@
 # -*- coding: UTF-8 -*-
 """Set 3, Exercise 4."""
-
-
-from decimal import ROUND_UP
 import math
-
-# import time
 
 
 def binary_search(low, high, actual_number):

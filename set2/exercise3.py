@@ -175,7 +175,6 @@ def loops_3():
         for i in range(10):
             my_list.append(str(j))
         field_list.append(my_list)
-    print(field_list)
     return field_list
 
 
@@ -203,7 +202,6 @@ def loops_4():
         for i in range(10):
             my_list.append(str(i))
         field_list.append(my_list)
-    print (field_list)
     return field_list
 
 
@@ -241,7 +239,6 @@ def loops_5():
         for j in range(5):
             coordinate_line.append("(i" + str(i) + ", j" +  str(j) + ")")
         coordinate_list.append(coordinate_line)
-    print (coordinate_list)
     return coordinate_list
 
 
@@ -272,7 +269,6 @@ def loops_6():
         for j in range(i + 1):
             row.append(str(j))
         the_wedge.append(row)
-    print (the_wedge)
     return the_wedge
 
 
@@ -303,7 +299,6 @@ def loops_7():
         for j in range(i + 1):
             row.append("*")
         christmas_tree.append(row)
-    print (christmas_tree)
     return christmas_tree
 
 
